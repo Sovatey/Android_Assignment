@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Button_Login">
+        <item name="cornerSize">14dp</item>
+        <item name="elevation">6dp</item>
+    </style>
+</resources>

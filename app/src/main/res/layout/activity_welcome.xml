@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".welcome"
+    android:orientation="vertical"
+    android:background="@drawable/welcome_background"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="WELCOME"
+            android:textColor="#DEB68B"
+            android:textSize="40dp"
+            android:textStyle="bold"
+
+            app:fontFamily="@font/lemonada_semibold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="0dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LYLY"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+
+            app:fontFamily="@font/lemonada" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Coffee"
+            android:textColor="#986633"
+            android:textSize="25dp"
+            app:fontFamily="@font/lemon" />
+    </LinearLayout>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="match_parent"
+        android:layout_height="253dp"
+
+        android:src="@drawable/hot_coffee"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="90dp"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="14dp"
+            android:elevation="10dp"
+            android:textAllCaps="false"
+            android:text="Login"
+            app:shapeAppearanceOverlay="@style/Button_Login"
+            android:backgroundTint="#DEB68B"
+            android:height="55dp"
+            android:textColor="#fff"
+            android:id="@+id/login"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        android:orientation="horizontal">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
+        android:elevation="10dp"
+        android:textAllCaps="false"
+        android:text="Sign Up"
+        android:textColor="#fff"
+        android:height="55dp"
+        app:shapeAppearanceOverlay="@style/Button_Login"
+        android:backgroundTint="#DEB68B"
+        android:id="@+id/signup"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        />
+    </LinearLayout>
+</LinearLayout>

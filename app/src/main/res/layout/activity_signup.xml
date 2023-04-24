@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signup"
+    android:orientation="vertical">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="match_parent"
+        android:layout_height="253dp"
+        android:layout_marginTop="-67dp"
+        android:src="@drawable/test"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="-40dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:textSize="30dp"
+            android:textColor="#986633"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:inputType="text"
+        android:layout_margin="14dp"
+        android:background="@drawable/edit"
+        android:drawableStart="@drawable/username"
+        android:drawablePadding="10dp"
+        android:elevation="6dp"
+        android:paddingStart="8dp"
+        android:id="@+id/signup_username"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number"
+        android:inputType="text"
+        android:layout_margin="14dp"
+        android:background="@drawable/edit"
+        android:drawableStart="@drawable/phone"
+        android:drawablePadding="10dp"
+        android:elevation="6dp"
+        android:paddingStart="8dp"
+        android:id="@+id/signup_phonenumber"
+        />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="text"
+        android:layout_margin="14dp"
+        android:background="@drawable/edit"
+        android:drawableStart="@drawable/email"
+        android:drawablePadding="10dp"
+        android:elevation="6dp"
+        android:paddingStart="8dp"
+        android:id="@+id/signup_email"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:layout_margin="14dp"
+        android:background="@drawable/edit"
+        android:drawableStart="@drawable/baseline_key_24"
+        android:drawablePadding="10dp"
+        android:elevation="6dp"
+        android:paddingStart="8dp"
+        android:id="@+id/signup_password"
+        android:inputType="textPassword"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    <ImageView
+        android:id="@+id/myImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/foot"
+        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            >
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="14dp"
+            android:elevation="10dp"
+            android:textAllCaps="false"
+            android:text="Sign Up"
+            app:shapeAppearanceOverlay="@style/Button_Login"
+            android:backgroundTint="#DEB68B"
+            android:height="55dp"
+            android:id="@+id/signup_button"
+
+            />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
