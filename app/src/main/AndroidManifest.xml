@@ -37,7 +37,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".welcome"
+            android:name=".Food"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,6 +45,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.assingment_coffee.data_list_bakery"/>
+        <activity
+            android:name="com.example.assingment_coffee.data_list_salad"/>
+        <activity
+            android:name="com.example.assingment_coffee.data_list_chocolate"/>
+        <activity
+            android:name="com.example.assingment_coffee.data_list_yogurt"/>
+        <activity
+            android:name="com.example.assingment_coffee.data_listhocoffee"/>
+        <activity
+            android:name="com.example.assingment_coffee.data_list_beverages"/>
+        <activity
+            android:name="com.example.assingment_coffee.data_list_icecoffee"/>
+        <activity
+            android:name="com.example.assingment_coffee.data_list_food"/>
 
         <meta-data
             android:name="preloaded_fonts"
