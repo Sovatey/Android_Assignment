@@ -12,7 +12,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.appbar.MaterialToolbar;
 
 public class Bakery extends AppCompatActivity {
 
@@ -34,6 +35,8 @@ public class Bakery extends AppCompatActivity {
 
         CustomAdapter customAdapter = new CustomAdapter();
         gridView.setAdapter(customAdapter);
+        MaterialToolbar button_back = (MaterialToolbar) findViewById(R.id.back);
+
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 
@@ -43,6 +46,14 @@ public class Bakery extends AppCompatActivity {
                 intent.putExtra("name", name[i]);
                 intent.putExtra("image", image[i]);
                 startActivity(intent);
+            }
+        });
+
+        button_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),home.class);
+                startActivity(i);
             }
         });
     }
@@ -71,9 +82,9 @@ public class Bakery extends AppCompatActivity {
             TextView name_food = view1.findViewById(R.id.fruit);
             ImageView image_food = view1.findViewById(R.id.image_view);
 
+
             name_food.setText(name[i]);
             image_food.setImageResource(image[i]);
-
             return view1;
         }
     }

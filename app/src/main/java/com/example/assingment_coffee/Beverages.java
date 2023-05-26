@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.appbar.MaterialToolbar;
+
 public class Beverages extends AppCompatActivity {
 
     ListView listView;
@@ -24,12 +26,13 @@ public class Beverages extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.bakery);
+        setContentView(R.layout.beverages);
 
-        gridView = findViewById(R.id.lists_item);
+        gridView = findViewById(R.id.lists_item6);
 
         Beverages.CustomAdapter customAdapter = new Beverages.CustomAdapter();
         gridView.setAdapter(customAdapter);
+        MaterialToolbar button_back = (MaterialToolbar) findViewById(R.id.back1);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 
@@ -39,6 +42,15 @@ public class Beverages extends AppCompatActivity {
                 intent.putExtra("name", name[i]);
                 intent.putExtra("image", image[i]);
                 startActivity(intent);
+            }
+        });
+
+
+        button_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),home.class);
+                startActivity(i);
             }
         });
     }

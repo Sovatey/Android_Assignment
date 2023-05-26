@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.appbar.MaterialToolbar;
+
 public class Salad extends AppCompatActivity {
     ListView listView;
     GridView gridView;
@@ -29,6 +31,7 @@ public class Salad extends AppCompatActivity {
 
         Salad.CustomAdapter customAdapter = new Salad.CustomAdapter();
         gridView.setAdapter(customAdapter);
+        MaterialToolbar button_back = (MaterialToolbar) findViewById(R.id.back6);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 
@@ -38,6 +41,14 @@ public class Salad extends AppCompatActivity {
                 intent.putExtra("name", name[i]);
                 intent.putExtra("image", image[i]);
                 startActivity(intent);
+            }
+        });
+
+        button_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),home.class);
+                startActivity(i);
             }
         });
     }

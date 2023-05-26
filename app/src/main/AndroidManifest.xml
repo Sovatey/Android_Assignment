@@ -34,10 +34,34 @@
             android:name=".signup"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".IceCoffee"
+            android:exported="false" />
+        <activity
+            android:name=".Hotcoffee"
+            android:exported="false" />
+        <activity
+            android:name=".Chocolate"
             android:exported="false" />
         <activity
             android:name=".Food"
+            android:exported="false" />
+        <activity
+            android:name=".Salad"
+            android:exported="false" />
+        <activity
+            android:name=".Bakery"
+            android:exported="false" />
+        <activity
+            android:name=".Yogurt"
+            android:exported="false" />
+        <activity
+            android:name=".signup"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".welcome"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,22 +69,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.example.assingment_coffee.data_list_bakery"/>
-        <activity
-            android:name="com.example.assingment_coffee.data_list_salad"/>
-        <activity
-            android:name="com.example.assingment_coffee.data_list_chocolate"/>
-        <activity
-            android:name="com.example.assingment_coffee.data_list_yogurt"/>
-        <activity
-            android:name="com.example.assingment_coffee.data_listhocoffee"/>
-        <activity
-            android:name="com.example.assingment_coffee.data_list_beverages"/>
-        <activity
-            android:name="com.example.assingment_coffee.data_list_icecoffee"/>
-        <activity
-            android:name="com.example.assingment_coffee.data_list_food"/>
+        <activity android:name=".data_list_bakery" />
+        <activity android:name=".data_list_salad" />
+        <activity android:name=".data_list_chocolate" />
+        <activity android:name=".data_list_yogurt" />
+        <activity android:name=".data_listhocoffee" />
+        <activity android:name=".data_list_beverages" />
+        <activity android:name=".data_list_icecoffee" />
+        <activity android:name=".data_list_food" />
+        <activity android:name=".Beverages" />
 
         <meta-data
             android:name="preloaded_fonts"
