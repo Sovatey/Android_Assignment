@@ -8,16 +8,19 @@ import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
+import java.util.BitSet;
 import java.util.List;
 
 public class home extends AppCompatActivity {
@@ -33,7 +36,79 @@ public class home extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_home);
 
+            final Button button_drink_sign = (Button) findViewById(R.id.drink_sign);
+            final Button button_cold_coffee = (Button) findViewById(R.id.ice_coffee);
+            final Button button_hot_coffee = (Button) findViewById(R.id.hot_coffee);
+            final Button button_choco = (Button) findViewById((R.id.choco));
+            final Button button_food_sign = (Button) findViewById(R.id.food_sign);
+            final Button button_bakery = (Button) findViewById(R.id.bakery);
+            final Button button_salad = (Button) findViewById(R.id.salad);
+            final Button button_yogurt = (Button) findViewById(R.id.yogurt);
             viewPager2 = findViewById(R.id.viewPager);
+
+            button_bakery.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(getApplicationContext(),Bakery.class);
+                    startActivity(i);
+                }
+            });
+
+            button_salad.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(getApplicationContext(),Salad.class);
+                    startActivity(i);
+                }
+            });
+
+            button_yogurt.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(getApplicationContext(),Yogurt.class);
+                    startActivity(i);
+                }
+            });
+
+            button_cold_coffee.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(getApplicationContext(),IceCoffee.class);
+                    startActivity(i);
+                }
+            });
+
+            button_hot_coffee.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(getApplicationContext(),Hotcoffee.class);
+                    startActivity(i);
+                }
+            });
+
+            button_choco.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(getApplicationContext(),Chocolate.class);
+                    startActivity(i);
+                }
+            });
+
+            button_drink_sign.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(getApplicationContext(),Beverages.class);
+                    startActivity(i);
+                }
+            });
+
+            button_food_sign.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(getApplicationContext(),Food.class);
+                    startActivity(i);
+                }
+            });
 //        getusername = findViewById(R.id.getname);
 
             String username = getIntent().getStringExtra("keyname");

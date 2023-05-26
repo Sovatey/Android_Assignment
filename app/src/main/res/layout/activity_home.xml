@@ -106,6 +106,7 @@
                 android:drawableLeft="@drawable/love_cup"
                 android:layout_margin="8dp"
                 app:shapeAppearanceOverlay="@style/Button_Login"
+                android:id="@+id/drink_sign"
                 />
             <Button
                 android:layout_width="178dp"
@@ -117,6 +118,7 @@
                 android:drawableLeft="@drawable/iced_coffee"
                 android:layout_margin="8dp"
                 app:shapeAppearanceOverlay="@style/Button_Login"
+                android:id="@+id/ice_coffee"
                 />
         </LinearLayout>
         <LinearLayout
@@ -134,6 +136,7 @@
                 android:drawableLeft="@drawable/hotcoffee"
                 android:layout_margin="8dp"
                 app:shapeAppearanceOverlay="@style/Button_Login"
+                android:id="@+id/hot_coffee"
                 />
             <Button
                 android:layout_width="178dp"
@@ -145,6 +148,83 @@
                 android:drawableLeft="@drawable/chocolate"
                 android:layout_margin="8dp"
                 app:shapeAppearanceOverlay="@style/Button_Login"
+                android:id="@+id/choco"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Foods"
+                android:textSize="25dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <Button
+                android:layout_width="178dp"
+                android:layout_height="wrap_content"
+                android:text="Signature"
+                android:backgroundTint="#f1f1f1"
+                android:textColor="@color/black"
+                android:textAllCaps="false"
+                android:drawableLeft="@drawable/foodbar"
+                android:layout_margin="8dp"
+                app:shapeAppearanceOverlay="@style/Button_Login"
+                android:id="@+id/food_sign"
+                />
+            <Button
+                android:layout_width="178dp"
+                android:layout_height="wrap_content"
+                android:text="Bakery"
+                android:backgroundTint="#f1f1f1"
+                android:textColor="@color/black"
+                android:textAllCaps="false"
+                android:drawableLeft="@drawable/bakery"
+                android:layout_margin="8dp"
+                app:shapeAppearanceOverlay="@style/Button_Login"
+                android:id="@+id/bakery"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <Button
+                android:layout_width="178dp"
+                android:layout_height="wrap_content"
+                android:text="Salad"
+                android:backgroundTint="#f1f1f1"
+                android:textColor="@color/black"
+                android:textAllCaps="false"
+                android:drawableLeft="@drawable/salad"
+                android:layout_margin="8dp"
+                app:shapeAppearanceOverlay="@style/Button_Login"
+                android:id="@+id/salad"
+                />
+            <Button
+                android:layout_width="178dp"
+                android:layout_height="wrap_content"
+                android:text="Yogurt"
+                android:backgroundTint="#f1f1f1"
+                android:textColor="@color/black"
+                android:textAllCaps="false"
+                android:drawableLeft="@drawable/yogurt"
+                android:layout_margin="8dp"
+                app:shapeAppearanceOverlay="@style/Button_Login"
+                android:id="@+id/yogurt"
                 />
         </LinearLayout>
 
