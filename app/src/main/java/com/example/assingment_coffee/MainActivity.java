@@ -10,12 +10,25 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.AccessToken;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
+
+import java.util.Arrays;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView text_forget_password;
     EditText login_username, login_password;
     Button login_button;
     LoginDB DB;
+    CallbackManager callbackManager;
+    CircleImageView btnFb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +61,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         });
+        callbackManager = CallbackManager.Factory.create();
+        AccessToken accessToken = AccessToken.getCurrentAccessToken();
+        if(accessToken != null && !accessToken.isExpired()==false){
+            startActivity(new Intent(MainActivity.this, main_home.class));
+            finish();
+        };
+        LoginManager.getInstance().registerCallback(callbackManager,
+                new FacebookCallback<LoginResult>() {
+                    @Override
+                    public void onSuccess(LoginResult loginResult) {
+                        startActivity(new Intent(MainActivity.this, main_home.class));
+                        finish();
+                    }
+
+                    @Override
+                    public void onCancel() {
+                        // App code
+                    }
+
+                    @Override
+                    public void onError(FacebookException exception) {
+                        // App code
+                    }
+                });
+        btnFb = findViewById(R.id.btnFaceBook);
+        btnFb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LoginManager.getInstance().logInWithReadPermissions(MainActivity.this, Arrays.asList("public_profile"));
+            }
+        });
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
@@ -55,4 +104,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent i = new Intent(getApplicationContext(),forget_password.class);
         startActivity(i);
     }
+
 }

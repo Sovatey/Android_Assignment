@@ -4,4 +4,9 @@
     <string name="nav_close">Close</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="facebook_app_id">1203800613586435</string>
+    <string name="fb_login_protocol_scheme">fb1203800613586435</string>
+    <string name="facebook_client_token">181c5f24f376da0100f66842a837b3f1</string>
+
 </resources>
