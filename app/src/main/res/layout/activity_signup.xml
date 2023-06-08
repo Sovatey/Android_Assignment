@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".signup"
+    tools:context=".SignupActivity"
     android:orientation="vertical">
 
     <pl.droidsonroids.gif.GifImageView
@@ -44,20 +44,6 @@
         android:paddingStart="8dp"
         android:id="@+id/signup_username"
         />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Phone Number"
-        android:inputType="text"
-        android:layout_margin="14dp"
-        android:background="@drawable/edit"
-        android:drawableStart="@drawable/phone"
-        android:drawablePadding="10dp"
-        android:elevation="6dp"
-        android:paddingStart="8dp"
-        android:id="@+id/signup_phonenumber"
-        />
-
 
     <EditText
         android:layout_width="match_parent"
@@ -83,6 +69,19 @@
         android:elevation="6dp"
         android:paddingStart="8dp"
         android:id="@+id/signup_password"
+        android:inputType="textPassword"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirm Password"
+        android:layout_margin="14dp"
+        android:background="@drawable/edit"
+        android:drawableStart="@drawable/baseline_key_24"
+        android:drawablePadding="10dp"
+        android:elevation="6dp"
+        android:paddingStart="8dp"
+        android:id="@+id/signup_confirm_password"
         android:inputType="textPassword"
         />
 
