@@ -180,6 +180,8 @@ public class HomeActivity extends AppCompatActivity {
         navView.setNavigationItemSelectedListener(menuItem -> {
             // Mark: logout event
             if(menuItem.getItemId() == R.id.nav_logout) {
+                FirebaseAuth.getInstance().signOut();
+
                 Intent intent = new Intent(this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);

@@ -139,26 +139,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
+                        boolean emailVerified = mAuth.getCurrentUser().isEmailVerified();
                         if(progressDialog.isShowing()) progressDialog.dismiss();
-                        navigateToHome();
+
+                        if(!emailVerified) {
+                            FirebaseAuth.getInstance().signOut();
+                            new AlertDialog.Builder(MainActivity.this)
+                                    .setTitle("Login Failed")
+                                    .setMessage("This account is not yet activated. Please check your email to activate.")
+                                    .setIcon(R.drawable.cancel)
+                                    .setPositiveButton("OK", null)
+                                    .show();
+                        } else {
+                            navigateToHome();
+                        }
                     }
                 }
             }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         if(progressDialog.isShowing()) progressDialog.dismiss();
-                        AlertDialog.Builder dialog=new AlertDialog.Builder(MainActivity.this);
-                        dialog.setMessage(e.getMessage());
-                        dialog.setIcon(R.drawable.cancel);
-                        dialog.setTitle("Login Failed");
-                        dialog.setPositiveButton("OK",
-                                new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int which) {
-
-                                    }
-                                });
-                        AlertDialog alertDialog = dialog.create();
-                        alertDialog.show();
+                        new AlertDialog.Builder(MainActivity.this)
+                                .setTitle("Login Failed")
+                                .setMessage(e.getMessage())
+                                .setIcon(R.drawable.cancel)
+                                .setPositiveButton("OK", null)
+                                .show();
                     }
                 });
     }

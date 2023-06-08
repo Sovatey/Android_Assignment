@@ -1,53 +1,79 @@
 package com.example.assingment_coffee;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class ForgetPasswordActivity extends AppCompatActivity {
 
-//    EditText forgetpassword_username, forgetpassword_email, forgetpassword_password;
-//    Button forgetpassword_button;
-//    LoginDBHelper DB;
+    EditText txtEmail;
+    Button btnForgetPassword;
+    private ProgressDialog progressDialog;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forget_password);
 
-//        forgetpassword_username = (EditText) findViewById(R.id.forgetpassword_username);
-//        forgetpassword_email = (EditText) findViewById(R.id.forgetpassword_email);
-//        forgetpassword_password = (EditText) findViewById(R.id.forgetpassword_password);
-//        forgetpassword_button = (Button) findViewById(R.id.forgetpassword_button);
-//        DB = new LoginDBHelper(this);
-//
-//        forgetpassword_button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String username = forgetpassword_username.getText().toString();
-//                String password = forgetpassword_password.getText().toString();
-//                String email = forgetpassword_email.getText().toString();
-//
-//                if(username.equals("") || password.equals("") || email.equals(""))
-//                    Toast.makeText(ForgetPasswordActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
-//                else{
-//                    Boolean update_password = DB.updatepassword(username,email,password);
-//                    if (update_password == true){
-//                        Toast.makeText(ForgetPasswordActivity.this, "Change password successfully", Toast.LENGTH_SHORT).show();
-//                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-//                        startActivity(intent);
-//                    }else{
-//                        Toast.makeText(ForgetPasswordActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
-//                    }
-//                }
-//            }
-//        });
+        progressDialog = new ProgressDialog(this);
+
+        txtEmail = (EditText) findViewById(R.id.forgetpassword_email);
+        btnForgetPassword = (Button) findViewById(R.id.forgetpassword_button);
+
+        btnForgetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                progressDialog.setMessage("Loading...");
+                progressDialog.show();
+
+                String email = txtEmail.getText().toString();
+                FirebaseAuth auth = FirebaseAuth.getInstance();
+                auth.sendPasswordResetEmail(email)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                new AlertDialog.Builder(ForgetPasswordActivity.this)
+                                        .setTitle("Reset Success")
+                                        .setMessage("Please check your email to reset your account")
+                                        .setIcon(R.drawable.check_circle)
+                                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                if(progressDialog.isShowing()) progressDialog.dismiss();
+                                                finish();
+                                            }
+                                        })
+                                        .show();
+                            }
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                if(progressDialog.isShowing()) progressDialog.dismiss();
+
+                                new AlertDialog.Builder(ForgetPasswordActivity.this)
+                                        .setTitle("Login Failed")
+                                        .setMessage(e.getMessage())
+                                        .setIcon(R.drawable.cancel)
+                                        .setPositiveButton("OK", null)
+                                        .show();
+                            }
+                        });
+            }
+        });
     }
 }

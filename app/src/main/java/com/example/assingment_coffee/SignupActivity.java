@@ -104,17 +104,17 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     private void dialogSignupSuccess() {
-        AlertDialog.Builder dialog=new AlertDialog.Builder(this);
-        dialog.setMessage("Please check your email to activate your account");
-        dialog.setIcon(R.drawable.check_circle);
-        dialog.setTitle("Signup Success");
-        dialog.setPositiveButton("OK",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
-                });
-        AlertDialog alertDialog = dialog.create();
-        alertDialog.show();
+        new AlertDialog.Builder(this)
+            .setTitle("Signup Success")
+            .setMessage("Please check your email to activate your account")
+            .setIcon(R.drawable.check_circle)
+            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    FirebaseAuth.getInstance().signOut();
+                    finish();
+                }
+            })
+            .show();
     }
 }
