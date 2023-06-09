@@ -29,7 +29,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
-            android:id="@+id/beverage_add_card"
+            android:id="@+id/food_add_card"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:insetTop="0dp"

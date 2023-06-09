@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BeverageDetailActivity">
+    tools:context=".BeverageDetailActivity"
+    android:background="#F4F4F4">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout2"
@@ -22,28 +23,43 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <TextView
+        android:id="@+id/emptyCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Empty Cart"
+        android:textAlignment="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomLayoutCart"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout2" />
+
     <ScrollView
+        android:id="@+id/scrollViewCart"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomLayout2"
+        android:paddingBottom="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/bottomLayoutCart"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout2">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/cart_recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"/>
+                android:layout_marginEnd="8dp"/>
 
     </ScrollView>
 
     <LinearLayout
-        android:id="@+id/bottomLayout2"
+        android:id="@+id/bottomLayoutCart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="@android:color/white">
 
         <TableLayout
             android:id="@+id/table_cart"
@@ -66,7 +82,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textClock"
+                    android:id="@+id/total_cart_price"
                     android:text="$ 0.00"
                     android:layout_column="1"
                     android:textStyle="bold"
@@ -84,7 +100,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/cart_tax"
+                    android:id="@+id/total_cart_tax"
                     android:text="$ 0.00"
                     android:layout_column="1"
                     android:textStyle="bold"
@@ -103,9 +119,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/cart_delivery"
-                    android:text="$ 0.00"
+                    android:text="Free"
                     android:layout_column="1"
-                    android:textStyle="bold"
+                    android:textColor="@android:color/holo_green_dark"
                     android:textAlignment="textEnd"/>
             </TableRow>
             <TableRow
@@ -147,6 +163,7 @@
                 android:text="Payable amount: "/>
 
             <TextView
+                android:id="@+id/total_cart_paid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/holo_green_dark"
@@ -157,7 +174,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/beverage_add_card"
+            android:id="@+id/cart_checkout"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:insetTop="0dp"

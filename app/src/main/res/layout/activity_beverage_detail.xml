@@ -23,7 +23,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
-        android:id="@+id/bottomLayout2"
+        android:id="@+id/bottomLayoutCart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent">
@@ -43,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/bottomLayout2"
+        app:layout_constraintBottom_toTopOf="@+id/bottomLayoutCart"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout2">
 
             <androidx.constraintlayout.widget.ConstraintLayout
