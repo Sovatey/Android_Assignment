@@ -13,13 +13,13 @@ import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
 import com.example.assingment_coffee.R;
-import com.example.assingment_coffee.models.BeverageModel;
+import com.example.assingment_coffee.models.FoodModel;
 
 import java.util.List;
 
-public class BeverageAdapter extends ArrayAdapter<BeverageModel> {
+public class BeverageAdapter extends ArrayAdapter<FoodModel> {
 
-    public BeverageAdapter(@NonNull Context context, @NonNull List<BeverageModel> objects) {
+    public BeverageAdapter(@NonNull Context context, @NonNull List<FoodModel> objects) {
         super(context, 0, objects);
     }
 
@@ -39,7 +39,7 @@ public class BeverageAdapter extends ArrayAdapter<BeverageModel> {
         TextView description = customView.findViewById(R.id.item_beverage_description);
         TextView price = customView.findViewById(R.id.item_beverage_price);
 
-        BeverageModel beverageModel = getItem(position);
+        FoodModel beverageModel = getItem(position);
         title.setText(beverageModel.getTitle());
         description.setText(beverageModel.getDescription());
         price.setText(beverageModel.getFormatPrice());

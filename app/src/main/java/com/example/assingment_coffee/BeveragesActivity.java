@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.assingment_coffee.adapter.BeverageAdapter;
-import com.example.assingment_coffee.models.BeverageModel;
+import com.example.assingment_coffee.models.FoodModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.appbar.MaterialToolbar;
@@ -28,7 +28,7 @@ public class BeveragesActivity extends AppCompatActivity {
     private GridView gridView;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private ProgressDialog progressDialog;
-    private List<BeverageModel> beverageList = new ArrayList<>();
+    private List<FoodModel> beverageList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +54,7 @@ public class BeveragesActivity extends AppCompatActivity {
 
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot document : task.getResult()) {
-                            BeverageModel beverageModel = new BeverageModel();
+                            FoodModel beverageModel = new FoodModel();
                             beverageModel.setId(document.getId());
                             beverageModel.setTitle(document.getString("title"));
                             beverageModel.setPrice(document.getDouble("price"));

@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.assingment_coffee.R;
-import com.example.assingment_coffee.models.BeverageModel;
 import com.example.assingment_coffee.models.FoodModel;
 import com.example.assingment_coffee.models.RecyclerViewInterface;
 
@@ -73,7 +72,6 @@ public class FoodRelatedAdapter extends RecyclerView.Adapter<FoodRelatedAdapter.
         viewHolder.productPrice.setText(foodModels.get(position).getFormatPrice());
         Glide.with(context).load(foodModels.get(position).getImage()).into(viewHolder.productImage);
     }
-
 
     @Override
     public int getItemCount() {

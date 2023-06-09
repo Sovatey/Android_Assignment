@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.assingment_coffee.adapter.BeverageRelatedAdapter;
-import com.example.assingment_coffee.models.BeverageModel;
+import com.example.assingment_coffee.models.FoodModel;
 import com.example.assingment_coffee.models.RecyclerViewInterface;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -31,7 +31,7 @@ public class BeverageDetailActivity extends AppCompatActivity implements Recycle
 
     private ImageView beverageDetailImage;
     private TextView viewTitle, viewPrice, viewDescription;
-    private List<BeverageModel> beverageList = new ArrayList<>();
+    private List<FoodModel> beverageList = new ArrayList<>();
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private RecyclerView recyclerView;
     private BeverageRelatedAdapter adapter;
@@ -41,7 +41,7 @@ public class BeverageDetailActivity extends AppCompatActivity implements Recycle
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beverage_detail);
 
-        BeverageModel beverageModel = (BeverageModel) getIntent().getSerializableExtra("BeverageDetail");
+        FoodModel beverageModel = (FoodModel) getIntent().getSerializableExtra("BeverageDetail");
 
         beverageDetailImage = findViewById(R.id.beverage_detail_image);
         Glide.with(this).load(beverageModel.getImage()).into(beverageDetailImage);
@@ -73,7 +73,7 @@ public class BeverageDetailActivity extends AppCompatActivity implements Recycle
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                BeverageModel beverageModel = new BeverageModel();
+                                FoodModel beverageModel = new FoodModel();
                                 beverageModel.setId(document.getId());
                                 beverageModel.setTitle(document.getString("title"));
                                 beverageModel.setPrice(document.getDouble("price"));

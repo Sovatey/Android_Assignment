@@ -10,10 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-
-import com.example.assingment_coffee.adapter.BeverageAdapter;
 import com.example.assingment_coffee.adapter.FoodAdapter;
-import com.example.assingment_coffee.models.BeverageModel;
 import com.example.assingment_coffee.models.FoodModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

@@ -12,14 +12,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.assingment_coffee.R;
-import com.example.assingment_coffee.models.BeverageModel;
+import com.example.assingment_coffee.models.FoodModel;
 import com.example.assingment_coffee.models.RecyclerViewInterface;
 
 import java.util.List;
 
 public class BeverageRelatedAdapter extends RecyclerView.Adapter<BeverageRelatedAdapter.ViewHolder> {
 
-    private List<BeverageModel> beverageModels;
+    private List<FoodModel> beverageModels;
     private Context context;
     private RecyclerViewInterface recyclerViewInterface;
 
@@ -50,7 +50,7 @@ public class BeverageRelatedAdapter extends RecyclerView.Adapter<BeverageRelated
 
     }
 
-    public BeverageRelatedAdapter(List<BeverageModel> dataSet, Context context, RecyclerViewInterface recyclerViewInterface) {
+    public BeverageRelatedAdapter(List<FoodModel> dataSet, Context context, RecyclerViewInterface recyclerViewInterface) {
         this.beverageModels = dataSet;
         this.context = context;
         this.recyclerViewInterface = recyclerViewInterface;
