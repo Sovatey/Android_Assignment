@@ -4,6 +4,7 @@
     package="com.example.assingment_coffee">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -16,49 +17,31 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".main_home"
+            android:name=".CardActivity"
             android:exported="false" />
         <activity
-            android:name=".cart"
+            android:name=".FoodDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".drawer_top"
+            android:name=".FoodActivity"
             android:exported="false" />
         <activity
-            android:name=".home"
+            android:name=".BeverageDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".forget_password"
+            android:name=".HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".signup"
+            android:name=".ForgetPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".IceCoffee"
-            android:exported="false" />
-        <activity
-            android:name=".Hotcoffee"
-            android:exported="false" />
-        <activity
-            android:name=".Chocolate"
-            android:exported="false" />
-        <activity
-            android:name=".Food"
-            android:exported="false" />
-        <activity
-            android:name=".Salad"
-            android:exported="false" />
-        <activity
-            android:name=".Bakery"
-            android:exported="false" />
-        <activity
-            android:name=".Yogurt"
+            android:name=".SignupActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".welcome"
+            android:name=".WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -66,37 +49,34 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".data_list_bakery" />
-        <activity android:name=".data_list_salad" />
-        <activity android:name=".data_list_chocolate" />
-        <activity android:name=".data_list_yogurt" />
-        <activity android:name=".data_listhocoffee" />
-        <activity android:name=".data_list_beverages" />
-        <activity android:name=".data_list_icecoffee" />
-        <activity android:name=".data_list_food" />
-        <activity android:name=".Beverages" />
+        <activity android:name=".BeveragesActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
-        <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.facebook.sdk.ClientToken"
+            android:value="@string/facebook_client_token" />
 
-        <activity android:name="com.facebook.FacebookActivity"
-            android:configChanges=
-                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
         <activity
             android:name="com.facebook.CustomTabActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
